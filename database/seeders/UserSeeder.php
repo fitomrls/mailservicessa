@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 use Illuminate\Support\Facades\Hash;
-
 use Illuminate\Database\Seeder;
-user 
+use App\Models\User;
+use Carbon\Carbon;
 
 class UserSeeder extends Seeder
 {
@@ -15,18 +15,17 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        
-        $hash = Hash::make(time());
+                
         $user = new User();
-        $user->nombres = $input['nombres'];
-        $user->apellidos = $input['apellidos'];
-        $user->email = $input['email'];
-        $hash = Hash::make(time());
-        $user->remember_token = str_replace("/", "", $hash);
-        $user->password = Hash::make(time());
-        $user->rol = "user";
-        $user->estadou = "inactivo";
-        
+        $user->identifier = time();
+        $user->email = "admin@mail.com";
+        $user->password = Hash::make("adminadmin");
+        $user->name = "User Admin";
+        $user->docid = "1";
+        $user->citycod = "1";
+        $user->bdate = Carbon::parse("200-01-01")->format('Y-m-d');
+        $user->state = "active";
+        $user->rol = "admin";        
     
         $user->save();
 

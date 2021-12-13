@@ -28,7 +28,6 @@ class User extends Authenticatable
         'docid',
         'bdate',
         'citycod',
-        'docid',
         'state',
         'rol'
     ];
