@@ -20,8 +20,8 @@ class CreateEmailsTable extends Migration
             $table->text('message')->nullable();
             $table->string('estate', 20);
 
-            $table->unsignedBigInteger('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('person_id')->unsigned();
+            $table->foreign('person_id')->references('id')->on('persons');
 
             $table->timestamps();
         });
