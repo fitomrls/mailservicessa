@@ -35,7 +35,7 @@ class LoginController extends Controller
             return redirect('/admin');
         }
 
-        if ($user->rol=='client') {
+        if ($user->rol=='user') {
             return redirect('/user');
         }
     }
@@ -54,28 +54,13 @@ class LoginController extends Controller
         return [
             'email' => request()->email,
             'password' => request()->password,
-            'estadou' => 'activo'
+            'state' => 'active'
         ];
     }
 
     public function showLoginForm()
     {
-        return view('publico.login');
+        return view('auth.login');
     }
-
-/*     public function logout()
-    {
-        $accessToken = auth()->user()->token();
-
-        $refreshToken = DB::table('oauth_refresh_tokens')
-        ->where('access_token_id', $accessToken->id)
-        ->update([
-            'revoked' => true
-        ]);
-
-        $accessToken->revoke();
-
-        return response()->json(['status' => 200]);
-    } */
 
 }

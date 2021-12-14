@@ -13,8 +13,7 @@ class Email extends Model
         'to',
         'from',
         'message',
-        'estate',
-        ''
+        'estate'
     ];
 
     public function user()

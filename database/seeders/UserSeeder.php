@@ -29,7 +29,7 @@ class UserSeeder extends Seeder
         $person->name = "User Admin";
         $person->docid = "1";
         $person->citycod = "1";
-        $person->bdate = Carbon::parse("200-01-01")->format('Y-m-d');
+        $person->bdate = Carbon::parse("1988-04-07")->format('Y-m-d');
         $person->user_id = $user->id;
         $person->save();
 
