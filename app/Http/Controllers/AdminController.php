@@ -10,10 +10,18 @@ class AdminController extends Controller
 {
     public function index()
     {
-        //$person = Person::where("user_id", auth()->id())->first();
         $user = User::where("id", auth()->id())->select("id","email", "rol")->first();
         $user->person = Person::where("user_id", auth()->id())->first();
-        //dd($user);
         return view("admin.index", ["user"=>$user]);
+    }
+
+    public function vusers()
+    {
+        return view("admin.users");
+    }
+
+    public function vnuevo()
+    {
+        return view("admin.nuevo");
     }
 }

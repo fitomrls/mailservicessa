@@ -25,5 +25,7 @@ Auth::routes(['register' => false]);
 
 Route::prefix('admin')->group(function () {    
     Route::get('/', [AdminController::class,'index'])->middleware('rol:admin');
+    Route::get('/users', [AdminController::class,'vusers'])->middleware('rol:admin');
+    Route::get('/nuevo', [AdminController::class,'vnuevo'])->middleware('rol:admin');
 });
 

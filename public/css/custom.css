@@ -1,0 +1,19 @@
+.centro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-name span{
+    font-size: 0.8em;
+    color: #333;
+    font-weight: bold;
+}
+
+.user-info{
+    list-style: none;
+}
+
+.form-nuevo{
+    padding-top: 1em;
+}

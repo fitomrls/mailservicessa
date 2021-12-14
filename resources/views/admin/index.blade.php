@@ -2,10 +2,14 @@
 
 @section('content')
 <div class="container">
-    <div>Bienvenido:</div>
-    <div>
-        <ul>
-            <li>Nombre: {{$user->person->name}}</li>
+
+    <div class="navmenu">
+        <a href="{{url('admin/users')}}" class="btn btn-primary">Usuarios</a>
+    </div>
+
+    <h1 class="user-name">Bienvenido: <span>{{$user->person->name}}</span></h1>
+    <div class="centro">
+        <ul class="user-info">
             <li>Email: {{$user->email}}</li>
             <li>Identificador: {{$user->person->identifier}}</li>
             <li>Celular: {{$user->person->mobile}}</li>
