@@ -4,6 +4,7 @@ namespace Database\Seeders;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Database\Seeder;
 use App\Models\User;
+use App\Models\Person;
 use Carbon\Carbon;
 
 class UserSeeder extends Seeder
@@ -17,17 +18,20 @@ class UserSeeder extends Seeder
     {
                 
         $user = new User();
-        $user->identifier = time();
         $user->email = "admin@mail.com";
-        $user->password = Hash::make("adminadmin");
-        $user->name = "User Admin";
-        $user->docid = "1";
-        $user->citycod = "1";
-        $user->bdate = Carbon::parse("200-01-01")->format('Y-m-d');
+        $user->password = Hash::make("adminadmin");    
         $user->state = "active";
         $user->rol = "admin";        
-    
         $user->save();
+        
+        $person = new Person();
+        $person->identifier = time();
+        $person->name = "User Admin";
+        $person->docid = "1";
+        $person->citycod = "1";
+        $person->bdate = Carbon::parse("200-01-01")->format('Y-m-d');
+        $person->user_id = $user->id;
+        $person->save();
 
     }
 }
